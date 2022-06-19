@@ -1,0 +1,9 @@
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\bin\Debug\netcoreapp3.1\Mer.Data.Core.deps.json
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\bin\Debug\netcoreapp3.1\Mer.Data.Core.dll
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\bin\Debug\netcoreapp3.1\Mer.Data.Core.pdb
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Debug\netcoreapp3.1\Mer.Data.Core.csprojAssemblyReference.cache
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Debug\netcoreapp3.1\Mer.Data.Core.AssemblyInfoInputs.cache
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Debug\netcoreapp3.1\Mer.Data.Core.AssemblyInfo.cs
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Debug\netcoreapp3.1\Mer.Data.Core.csproj.CoreCompileInputs.cache
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Debug\netcoreapp3.1\Mer.Data.Core.dll
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Debug\netcoreapp3.1\Mer.Data.Core.pdb

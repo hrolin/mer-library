@@ -1,0 +1,12 @@
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\bin\Release\net6.0\Mer.Data.Core.deps.json
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\bin\Release\net6.0\Mer.Data.Core.dll
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\bin\Release\net6.0\Mer.Data.Core.pdb
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.csproj.AssemblyReference.cache
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.AssemblyInfoInputs.cache
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.AssemblyInfo.cs
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.csproj.CoreCompileInputs.cache
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.dll
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Release\net6.0\ref\Mer.Data.Core.dll
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.pdb
+D:\MerSoftware\MerSoftwareLibrary\Mer\Mer.Data.Core\obj\Release\net6.0\refint\Mer.Data.Core.dll
