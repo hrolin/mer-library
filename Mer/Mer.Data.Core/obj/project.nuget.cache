@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AgPEOhRaa0JczPtDPyHIRnuTiZb8SJwq5DLhxiRpOn0fdgz/V3Q6I423T7dMtp+eVseLTPjrIcfUQLtKf6MRog==",
+  "dgSpecHash": "Ca3kcxtw0dami5YyXGb+6Pw1yGNbWEw/fJ3Ea/+C2UTLze9XpiS6Mg2N5+HA+mI6goMYRMCyZTAO7adoCGNvUA==",
   "success": true,
-  "projectFilePath": "D:\\MerSoftware\\MerSoftwareLibrary\\Mer\\Mer.Data.Core\\Mer.Data.Core.csproj",
+  "projectFilePath": "C:\\MerSoftware\\mer-library\\Mer\\Mer.Data.Core\\Mer.Data.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bigay\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\bigay\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.1\\microsoft.netcore.platforms.5.0.1.nupkg.sha512",
