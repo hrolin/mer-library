@@ -88,22 +88,41 @@ namespace Mer.Data.Core.Db
             ProcessResult result = new ProcessResult();
             string parameterNames = "";
             string parameterValues = "";
+            string insertQry = "";
             try
             {
                 foreach (DbParameters parameter in parameters)
                 {
-                    parameterNames += parameter.ParameterName + ";";
-                    if (parameter.ParameterDataType == ParameterDataTypes.Varchar2 || parameter.ParameterDataType == ParameterDataTypes.Date)
+                    parameterNames += parameter.ParameterName + ",";
+                    if (parameter.ParameterDataType == ParameterDataTypes.Varchar2)
                     {
-                        parameterValues += "'" + parameter.ParameterValue + "';";
+                        parameterValues += "'" + parameter.ParameterValue + "',";
                     }
                     else if (parameter.ParameterDataType == ParameterDataTypes.Number)
                     {
-                        parameterValues += parameter.ParameterValue + ";";
+                        parameterValues += parameter.ParameterValue + ",";
                     }
-                    
+                    else if (parameter.ParameterDataType == ParameterDataTypes.Bool)
+                    {
+                        parameterValues += "'" + parameter.ParameterValue.ToString().ToUpper() + "',";
+                    }
+                    else if (parameter.ParameterDataType == ParameterDataTypes.Date)
+                    {
+                        parameterValues += "to_date('" + parameter.ParameterValue + "', 'dd/mm/yyyy HH24:MI:SS'),";
+                    }
                 }
-                string insertQry = @"INSERT INTO :TABLE_NAME(:PARAMETER_NAMES) VALUES(:PARAMETER_VALUES);";
+
+                if (parameterNames.EndsWith(','))
+                {
+                    parameterNames = parameterNames.Substring(0, parameterNames.Length - 1);
+                }
+
+                if (parameterValues.EndsWith(','))
+                {
+                    parameterValues = parameterValues.Substring(0, parameterValues.Length - 1);
+                }
+
+                insertQry = String.Format(@"INSERT INTO {0} ( {1} ) VALUES( {2} )", tableName, parameterNames, parameterValues);
 
                 OracleConnection oracleConnection = new OracleConnection(connectionString.ConnectionString);
                 OracleCommand oracleCommand = new OracleCommand();
@@ -111,11 +130,8 @@ namespace Mer.Data.Core.Db
                 oracleCommand.CommandText = insertQry;
                 oracleCommand.CommandType = CommandType.Text;
 
-                oracleCommand.Parameters.Clear();
-                oracleCommand.Parameters.Add(":TABLE_NAME", tableName);
-                oracleCommand.Parameters.Add(":PARAMETER_NAMES", parameterNames);
-                oracleCommand.Parameters.Add(":PARAMETER_VALUES",parameterValues);
 
+                
                 oracleConnection.Open();
                 oracleCommand.ExecuteNonQuery();
                 oracleConnection.Close();
@@ -127,7 +143,8 @@ namespace Mer.Data.Core.Db
             }
             catch (OracleException ex)
             {
-                result = new ProcessResult { Success = false, Message = ex.Message };
+                
+                result = new ProcessResult { Success = false, Message = ex.Message, Query = insertQry };
             }
 
             return result;
@@ -136,27 +153,37 @@ namespace Mer.Data.Core.Db
         public static ProcessResult Delete(string tableName, List<DbParameters> parameters, OracleConnectionStringBuilder connectionString)
         {
             ProcessResult result = new ProcessResult();
-            string parameterNames = "";
             string parameterValues = "";
             try
             {
-                if (parameters != null && parameters.Count > 0)
-                {
-                    parameterValues = "WHERE ";
-                }
+                
                 foreach (DbParameters parameter in parameters)
                 {
-                    if (parameter.ParameterDataType == ParameterDataTypes.Varchar2 || parameter.ParameterDataType == ParameterDataTypes.Date)
+                    if (parameter.ParameterDataType == ParameterDataTypes.Varchar2)
                     {
-                        parameterValues += "'" + parameter.ParameterValue + "';";
+                        parameterValues += "'" + parameter.ParameterValue + "',";
                     }
                     else if (parameter.ParameterDataType == ParameterDataTypes.Number)
                     {
-                        parameterValues += parameter.ParameterValue + ";";
+                        parameterValues += parameter.ParameterValue + ",";
+                    }
+                    else if (parameter.ParameterDataType == ParameterDataTypes.Bool)
+                    {
+                        parameterValues += "'" + parameter.ParameterValue.ToString().ToUpper() + "',";
+                    }
+                    else if (parameter.ParameterDataType == ParameterDataTypes.Date)
+                    {
+                        parameterValues += "to_date('" + parameter.ParameterValue + "', 'dd/mm/yyyy HH24:MI:SS'),";
                     }
 
                 }
-                string insertQry = @"DELETE FROM :TABLE_NAME WHERE :PARAMETER_VALUES ;";
+
+                if (parameterValues.EndsWith(','))
+                {
+                    parameterValues = parameterValues.Substring(0, parameterValues.Length - 1);
+                }
+
+                string insertQry = string.Format(@"DELETE FROM {0} WHERE {1}", tableName, parameterValues);
 
                 OracleConnection oracleConnection = new OracleConnection(connectionString.ConnectionString);
                 OracleCommand oracleCommand = new OracleCommand();
@@ -165,9 +192,8 @@ namespace Mer.Data.Core.Db
                 oracleCommand.CommandType = CommandType.Text;
 
                 oracleCommand.Parameters.Clear();
-                oracleCommand.Parameters.Add(":TABLE_NAME", tableName);
-                oracleCommand.Parameters.Add(":PARAMETER_NAMES", parameterNames);
-                oracleCommand.Parameters.Add(":PARAMETER_VALUES", parameterValues);
+                oracleCommand.Parameters.Add("TABLE_NAME", tableName);
+                oracleCommand.Parameters.Add("PARAMETER_VALUES", parameterValues);
 
                 oracleConnection.Open();
                 oracleCommand.ExecuteNonQuery();

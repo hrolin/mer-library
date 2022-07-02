@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Version>0.0.5</Version>
+    <Version>0.0.12</Version>
     <Authors>Emircan Ayvaz</Authors>
     <Company>MER SOFTWARE YAZILIM VE DANIŞMANLIK</Company>
     <Product>Mer Software Oracle .Net Core Easy To Use Library</Product>

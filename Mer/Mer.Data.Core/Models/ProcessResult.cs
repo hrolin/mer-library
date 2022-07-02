@@ -9,5 +9,6 @@ namespace Mer.Data.Core.Models
         public object Data { get; set; }
         public bool Success { get; set; }
         public string Message { get; set; }
+        public string Query { get; set; }
     }
 }
