@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Mer.Data.Core</id>
+    <version>0.0.14</version>
+    <authors>Emircan Ayvaz</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Dapper" version="2.0.123" exclude="Build,Analyzers" />
+        <dependency id="Oracle.ManagedDataAccess.Core" version="3.21.4" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\MerSoftware\mer-library\Mer\Mer.Data.Core\bin\Release\net6.0\Mer.Data.Core.dll" target="lib\net6.0\Mer.Data.Core.dll" />
+  </files>
+</package>

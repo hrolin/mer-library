@@ -824,7 +824,7 @@
     "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {}
   },
   "project": {
-    "version": "0.0.12",
+    "version": "0.0.14",
     "restore": {
       "projectUniqueName": "C:\\MerSoftware\\mer-library\\Mer\\Mer.Data.Core\\Mer.Data.Core.csproj",
       "projectName": "Mer.Data.Core",
