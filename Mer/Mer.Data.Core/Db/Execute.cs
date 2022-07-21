@@ -45,7 +45,7 @@ namespace Mer.Data.Core.Db
             return result;
         }
 
-        public static ProcessResult Procedure(string procedure, List<DbParameters> parameters, OracleConnectionStringBuilder connectionString)
+        public static ProcessResult Procedure(DbProcedure dbProcedure, OracleConnectionStringBuilder connectionString)
         {
             ProcessResult result = new ProcessResult();
             try
@@ -54,13 +54,13 @@ namespace Mer.Data.Core.Db
                 OracleConnection oracleConnection = new OracleConnection(connectionString.ConnectionString);
                 OracleCommand oracleCommand = new OracleCommand();
                 oracleCommand.Connection = oracleConnection;
-                oracleCommand.CommandText = procedure;
+                oracleCommand.CommandText = dbProcedure.ProcedureName;
                 oracleCommand.CommandType = CommandType.StoredProcedure;
 
                 oracleCommand.Parameters.Clear();
-                OracleParameter[] oracleParameters = new OracleParameter[parameters.Count];
+                OracleParameter[] oracleParameters = new OracleParameter[dbProcedure.Parameters.Count];
                 int counter = 0;
-                foreach (DbParameters parameter in parameters)
+                foreach (DbParameters parameter in dbProcedure.Parameters)
                 {
                     oracleParameters[counter] = new OracleParameter(parameter.ParameterName,(OracleDbType)(int)parameter.ParameterDataType,parameter.ParameterValue, (ParameterDirection)(int)parameter.ParameterDirection );
                     counter++;
@@ -79,6 +79,54 @@ namespace Mer.Data.Core.Db
             {
                 result = new ProcessResult { Success = false, Message = ex.Message };
             }
+
+            return result;
+        }
+
+        public static ProcessResult Procedure(List<DbProcedure> dbProcedureList, OracleConnectionStringBuilder connectionString)
+        {
+            ProcessResult result;
+            OracleConnection oracleConnection = new OracleConnection(connectionString.ConnectionString);
+            oracleConnection.Open();
+            using (OracleTransaction transaction = oracleConnection.BeginTransaction())
+            {
+                try
+                {
+
+
+                    foreach (DbProcedure dbProcedure in dbProcedureList)
+                    {
+                        OracleCommand oracleCommand = new OracleCommand();
+                        oracleCommand.Connection = oracleConnection;
+                        oracleCommand.CommandText = dbProcedure.ProcedureName;
+                        oracleCommand.CommandType = CommandType.StoredProcedure;
+
+                        oracleCommand.Parameters.Clear();
+                        OracleParameter[] oracleParameters = new OracleParameter[dbProcedure.Parameters.Count];
+                        int counter = 0;
+                        foreach (DbParameters parameter in dbProcedure.Parameters)
+                        {
+                            oracleParameters[counter] = new OracleParameter(parameter.ParameterName, (OracleDbType)(int)parameter.ParameterDataType, parameter.ParameterValue, (ParameterDirection)(int)parameter.ParameterDirection);
+                            counter++;
+                        }
+                        oracleCommand.Parameters.AddRange(oracleParameters);
+                        oracleCommand.ExecuteNonQuery();
+                        oracleConnection.Dispose();
+                    }
+                    transaction.Commit(); 
+                    
+                    result = new ProcessResult { Success = true };
+
+                }
+                catch (OracleException ex)
+                {
+                    transaction.Rollback();
+                    result = new ProcessResult { Success = false, Message = ex.Message };
+                }
+                oracleConnection.Close();
+
+            }
+
 
             return result;
         }
