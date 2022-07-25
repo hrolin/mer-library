@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "Mer.Data.Core/0.0.15": {
+      "Mer.Data.Core/0.0.17": {
         "dependencies": {
           "Dapper": "2.0.123",
           "Oracle.ManagedDataAccess.Core": "3.21.4"
@@ -239,7 +239,7 @@
     }
   },
   "libraries": {
-    "Mer.Data.Core/0.0.15": {
+    "Mer.Data.Core/0.0.17": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

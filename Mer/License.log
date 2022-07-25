@@ -1,35 +1,35 @@
     ======  ======
-    Time:03/07/2022 16:34:13
+    Time:25/07/2022 14:01:14
     Title: Initiate log
     Message: 
-    Time:03/07/2022 16:34:13
+    Time:25/07/2022 14:01:14
     Title: Initiate InternalManager
     Message: Trying to Validate License
-    Time:03/07/2022 16:34:13
+    Time:25/07/2022 14:01:14
     Title: Requesting EVT
     Message: EVTP
-    Time:03/07/2022 16:34:13
+    Time:25/07/2022 14:01:14
     Title: Requesting Validation
     Message: ILMValidate
-    Time:03/07/2022 16:34:13
+    Time:25/07/2022 14:01:14
     Title: LICENSER
     Message: TRL MODE
-    Time:03/07/2022 16:34:13
+    Time:25/07/2022 14:01:14
     Title: LICENSER
-    Message: DS LEFT26
-    Time:03/07/2022 16:34:13
+    Message: DS LEFT4
+    Time:25/07/2022 14:01:14
     Title: LICENSER
-    Message: DT MARK PASSED26.00:00:00
-    Time:03/07/2022 16:34:13
+    Message: DT MARK PASSED4.00:00:00
+    Time:25/07/2022 14:01:15
     Title: Access to the path 'C:\ProgramData\Telerik\Hash.lic' is denied.
     Message:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
    at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
    at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
    at Telerik.Licensing.Licenser.ReadHashPass()
-    Time:03/07/2022 16:35:03
+    Time:25/07/2022 14:04:20
     Title: Requesting Validation
     Message: ILMValidate True
-    Time:03/07/2022 16:35:03
+    Time:25/07/2022 14:04:20
     Title: Requesting Validation
     Message: ILMValidate True Trial
     Entering constructor for: Telerik.CommonPackage.VSPackage
@@ -57,33 +57,32 @@
     Entering constructor for: Telerik.KendoUI.Mvc.VSPackage.VsPackage
     Entering constructor for: Telerik.KendoUI.Mvc.VSPackage.VsPackage
     Entering Initialize() for: Telerik.KendoUI.Mvc.VSPackage.VsPackage
+    All solution projects: 1
+    Project Wraps: 1
+    All solution projects: 1
+    Project Wraps: 1
+    All solution projects: 1
+    Project Wraps: 1
+    All solution projects: 1
+    Project Wraps: 1
+    All solution projects: 1
+    Project Wraps: 1
+    All solution projects: 1
+    Project Wraps: 1
+    All solution projects: 1
+    Project Wraps: 1
+    All solution projects: 1
+    Project Wraps: 1
+    All solution projects: 1
+    Project Wraps: 1
     Entering constructor for: Telerik.Windows.WPF.VSPackage.VSPackage
     Entering Initialize() for: Telerik.Windows.WPF.VSPackage.VSPackage
-    All solution projects: 1
-    Project Wraps: 1
-    All solution projects: 1
-    Project Wraps: 1
-    All solution projects: 1
-    Project Wraps: 1
-    All solution projects: 1
-    Project Wraps: 1
-    All solution projects: 1
-    Project Wraps: 1
-    All solution projects: 1
-    Project Wraps: 1
-    All solution projects: 1
-    Project Wraps: 1
-    All solution projects: 1
-    Project Wraps: 1
-    All solution projects: 1
-    Project Wraps: 1
     Entering constructor for: Telerik.WinControls.Converter.VSPackage.VSPackage
     Entering Initialize() for: Telerik.WinControls.Converter.VSPackage.VSPackage
+    TR: Assembly resolution failed: Telerik.VSX.Tracking.XmlSerializers, Version=5.0.0.5, Culture=neutral, PublicKeyToken=dac83c33184dc9bb
     Entering constructor for: Telerik.WinControls.VSPackage.VSPackage
     Entering Initialize() for: Telerik.WinControls.VSPackage.VSPackage
     TR: Assembly resolution failed: Telerik.Xamarin.UI.VSX.2022.2.617.1.XmlSerializers, Version=2022.2.617.1, Culture=neutral, PublicKeyToken=0dfdc51bd06071b4
-    Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
-    Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
     Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
     Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
     TR: Assembly resolution failed: Telerik.JustMock.VS.Async.Implementation.XmlSerializers, Version=2022.2.621.1, Culture=neutral, PublicKeyToken=602a9bfd8c8c4ad7
@@ -92,15 +91,18 @@
     Entering Initialize() for: Telerik.MAUI.VSPackage.VsPackage
     Entering Initialize() for: Telerik.MAUI.VSPackage.VsPackage
     TR: Assembly resolution failed: Telerik.JustMock.AddIn.XmlSerializers, Version=2022.2.621.1, Culture=neutral, PublicKeyToken=602a9bfd8c8c4ad7
-    devenv.exe Warning: 0 : EnvDTE.OutputWindowPane GetOutputWindowPane(System.String, Boolean): exception thrown while getting output window pane 'JustMock': System.Runtime.InteropServices.InvalidComObjectException: COM object that has been separated from its underlying RCW cannot be used. The COM object was released while it was still in use on another thread.
-   at System.StubHelpers.StubHelpers.GetCOMIPFromRCW(Object objSrc, IntPtr pCPCMD, IntPtr& ppTarget, Boolean& pfNeedsRelease)
+    TR: Assembly resolution failed: Telerik.Windows.Controls.Input, Version=2021.1.114.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7
+    given range is not current
+    given range is not current
+    given range is not current
+    Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
+    Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
+    Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
+    Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
+    devenv.exe Warning: 0 : EnvDTE.OutputWindowPane GetOutputWindowPane(System.String, Boolean): exception thrown while getting output window pane 'JustMock': System.InvalidCastException: Specified cast is not valid.
    at EnvDTE80.DTE2.get_Windows()
    at Telerik.JustMock.VS.Async.JustMockPackageImplementation.GetOutputWindowPane(String name, Boolean activate)
-oolean activate)
- (DV_E_CLIPFORMAT))
-    Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
-    Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
-    Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
+ULT: 0x8004006A (DV_E_CLIPFORMAT))
     Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
     Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
     Exception : Invalid clipboard format (Exception from HRESULT: 0x8004006A (DV_E_CLIPFORMAT))
