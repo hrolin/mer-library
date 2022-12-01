@@ -11,5 +11,5 @@ namespace Mer.Data.Core.Models
         public string DbTableName { get; set; }
         public string DbColumnName { get; set; }
         public bool DbUpdateParameter { get; set; }
-    }
+	}
 }
