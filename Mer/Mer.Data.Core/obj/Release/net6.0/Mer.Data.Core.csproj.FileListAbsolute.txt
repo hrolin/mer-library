@@ -34,3 +34,15 @@ D:\MerSoftware\mer-library\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.dl
 D:\MerSoftware\mer-library\Mer\Mer.Data.Core\obj\Release\net6.0\refint\Mer.Data.Core.dll
 D:\MerSoftware\mer-library\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.pdb
 D:\MerSoftware\mer-library\Mer\Mer.Data.Core\obj\Release\net6.0\ref\Mer.Data.Core.dll
+C:\Users\Nursah\Desktop\MER\mer-library\Mer\Mer.Data.Core\bin\Release\net6.0\Mer.Data.Core.deps.json
+C:\Users\Nursah\Desktop\MER\mer-library\Mer\Mer.Data.Core\bin\Release\net6.0\Mer.Data.Core.dll
+C:\Users\Nursah\Desktop\MER\mer-library\Mer\Mer.Data.Core\bin\Release\net6.0\Mer.Data.Core.pdb
+C:\Users\Nursah\Desktop\MER\mer-library\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.csproj.AssemblyReference.cache
+C:\Users\Nursah\Desktop\MER\mer-library\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nursah\Desktop\MER\mer-library\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.AssemblyInfoInputs.cache
+C:\Users\Nursah\Desktop\MER\mer-library\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.AssemblyInfo.cs
+C:\Users\Nursah\Desktop\MER\mer-library\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.csproj.CoreCompileInputs.cache
+C:\Users\Nursah\Desktop\MER\mer-library\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.dll
+C:\Users\Nursah\Desktop\MER\mer-library\Mer\Mer.Data.Core\obj\Release\net6.0\refint\Mer.Data.Core.dll
+C:\Users\Nursah\Desktop\MER\mer-library\Mer\Mer.Data.Core\obj\Release\net6.0\Mer.Data.Core.pdb
+C:\Users\Nursah\Desktop\MER\mer-library\Mer\Mer.Data.Core\obj\Release\net6.0\ref\Mer.Data.Core.dll
