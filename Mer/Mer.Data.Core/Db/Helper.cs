@@ -50,6 +50,54 @@ namespace Mer.Data.Core.Db
             return parameters;
         }
 
+        public static List<DbParameters> CreateParameterFromClassNotNull<T>(T className, ParameterDirections direction)
+        {
+            List<DbParameters> parameters = new List<DbParameters>();
+
+            Type type = typeof(T);
+            PropertyInfo[] properties = type.GetProperties();
+            foreach (PropertyInfo property in properties)
+            {
+                if (property.GetValue(className, null) == null)
+                {
+                    continue;
+                }
+
+                DbParameters parameter = new DbParameters();
+
+                DbAttribute attribute = property.GetCustomAttribute<DbAttribute>();
+                if (attribute != null && !string.IsNullOrEmpty(attribute.DbColumnName))
+                {
+                    parameter.ParameterName = attribute.DbColumnName;
+                }
+                else
+                {
+                    parameter.ParameterName = property.Name;
+                }
+                parameter.ParameterDirection = direction;
+                parameter.ParameterValue = property.GetValue(className, null);
+                if (property.PropertyType == typeof(string))
+                {
+                    parameter.ParameterDataType = ParameterDataTypes.Varchar2;
+                }
+                else if (property.PropertyType == typeof(int) || property.PropertyType == typeof(double) || property.PropertyType == typeof(decimal) || property.PropertyType == typeof(float))
+                {
+                    parameter.ParameterDataType = ParameterDataTypes.Number;
+                }
+                else if (property.PropertyType == typeof(bool))
+                {
+                    parameter.ParameterDataType = ParameterDataTypes.Bool;
+                }
+                else if (property.PropertyType == typeof(DateTime))
+                {
+                    parameter.ParameterDataType = ParameterDataTypes.Date;
+                }
+
+                parameters.Add(parameter);
+            }
+            return parameters;
+        }
+
         public static List<DbParameters> CreateConditionFromClass<T>(T className)
         {
             List<DbParameters> parameters = new List<DbParameters>();

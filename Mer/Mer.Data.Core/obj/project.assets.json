@@ -875,25 +875,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nursah\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\bigay\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Syncfusion\\Essential Studio\\WPF\\20.3.0.47\\ToolboxNuGetPackages": {}
   },
   "project": {
-    "version": "0.0.18",
+    "version": "0.0.19",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nursah\\Desktop\\MER\\mer-library\\Mer\\Mer.Data.Core\\Mer.Data.Core.csproj",
+      "projectUniqueName": "C:\\MerSoftware\\mer-library\\Mer\\Mer.Data.Core\\Mer.Data.Core.csproj",
       "projectName": "Mer.Data.Core",
-      "projectPath": "C:\\Users\\Nursah\\Desktop\\MER\\mer-library\\Mer\\Mer.Data.Core\\Mer.Data.Core.csproj",
-      "packagesPath": "C:\\Users\\Nursah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nursah\\Desktop\\MER\\mer-library\\Mer\\Mer.Data.Core\\obj\\",
+      "projectPath": "C:\\MerSoftware\\mer-library\\Mer\\Mer.Data.Core\\Mer.Data.Core.csproj",
+      "packagesPath": "C:\\Users\\bigay\\.nuget\\packages\\",
+      "outputPath": "C:\\MerSoftware\\mer-library\\Mer\\Mer.Data.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Syncfusion\\Essential Studio\\WPF\\20.3.0.47\\ToolboxNuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Nursah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bigay\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Syncfusion Toolbox for WPF.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -901,7 +904,8 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.devexpress.com/KNawcRLeXG5XmZy7xoydgAc9aYsYq8TVU1MfWNgEEyGdg1Fkav/api": {}
       },
       "frameworks": {
         "net6.0": {
@@ -944,7 +948,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
