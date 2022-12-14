@@ -362,6 +362,8 @@ namespace Mer.Data.Core.Db
             return result;
         }
 
+
+
         public static ProcessResult Update<T>(T className, OracleConnectionStringBuilder connectionString)
         {
             ProcessResult result = new ProcessResult();
@@ -373,6 +375,106 @@ namespace Mer.Data.Core.Db
 
                 string tableName = "";
                 List<DbParameters> parameters = Helper.CreateParameterFromClass(className, ParameterDirections.In);
+                List<DbParameters> conditions = Helper.CreateConditionFromClass(className);
+                DbAttribute tableAttr = className.GetType().GetCustomAttribute<DbAttribute>();
+                if (tableAttr != null && !string.IsNullOrEmpty(tableAttr.DbTableName))
+                {
+                    tableName = tableAttr.DbTableName;
+                }
+                foreach (DbParameters parameter in parameters)
+                {
+                    if (parameter.ParameterDataType == ParameterDataTypes.Varchar2)
+                    {
+                        parameterValues += parameter.ParameterName + " = " + "'" + parameter.ParameterValue + "',";
+                    }
+                    else if (parameter.ParameterDataType == ParameterDataTypes.Number)
+                    {
+                        parameterValues += parameter.ParameterName + " = " + parameter.ParameterValue + ",";
+                    }
+                    else if (parameter.ParameterDataType == ParameterDataTypes.Bool)
+                    {
+                        parameterValues += parameter.ParameterName + " = " + "'" + parameter.ParameterValue.ToString().ToUpper() + "',";
+                    }
+                    else if (parameter.ParameterDataType == ParameterDataTypes.Date)
+                    {
+                        parameterValues += parameter.ParameterName + " = " + "to_date('" + parameter.ParameterValue + "', 'dd/mm/yyyy HH24:MI:SS'),";
+                    }
+
+                }
+
+                if (parameterValues.EndsWith(','))
+                {
+                    parameterValues = parameterValues.Substring(0, parameterValues.Length - 1);
+                }
+
+                if (conditions != null && conditions.Count > 0)
+                {
+                    conditionValues = " WHERE ";
+                }
+
+                foreach (DbParameters condition in conditions)
+                {
+                    if (condition.ParameterDataType == ParameterDataTypes.Varchar2)
+                    {
+                        conditionValues += condition.ParameterName + " = " + "'" + condition.ParameterValue + "' AND ";
+                    }
+                    else if (condition.ParameterDataType == ParameterDataTypes.Number)
+                    {
+                        conditionValues += condition.ParameterName + " = " + condition.ParameterValue + " AND ";
+                    }
+                    else if (condition.ParameterDataType == ParameterDataTypes.Bool)
+                    {
+                        conditionValues += condition.ParameterName + " = " + "'" + condition.ParameterValue.ToString().ToUpper() + "' AND ";
+                    }
+                    else if (condition.ParameterDataType == ParameterDataTypes.Date)
+                    {
+                        conditionValues += condition.ParameterName + " = " + "to_date('" + condition.ParameterValue + "', 'dd/mm/yyyy HH24:MI:SS') AND ";
+                    }
+
+                }
+
+                if (conditionValues.EndsWith("AND "))
+                {
+                    conditionValues = conditionValues.Substring(0, conditionValues.Length - 4);
+                }
+
+                updateQry = String.Format(@"UPDATE {0} SET {1} {2}", tableName, parameterValues, conditionValues);
+
+                OracleConnection oracleConnection = new OracleConnection(connectionString.ConnectionString);
+                OracleCommand oracleCommand = new OracleCommand();
+                oracleCommand.Connection = oracleConnection;
+                oracleCommand.CommandText = updateQry;
+                oracleCommand.CommandType = CommandType.Text;
+
+
+
+                oracleConnection.Open();
+                oracleCommand.ExecuteNonQuery();
+                oracleConnection.Close();
+                oracleConnection.Dispose();
+
+                result = new ProcessResult { Success = true };
+            }
+            catch (OracleException ex)
+            {
+
+                result = new ProcessResult { Success = false, Message = ex.Message, Query = updateQry };
+            }
+
+            return result;
+        }
+
+        public static ProcessResult UpdateNotNull<T>(T className, OracleConnectionStringBuilder connectionString)
+        {
+            ProcessResult result = new ProcessResult();
+            string parameterValues = "";
+            string conditionValues = "";
+            string updateQry = "";
+            try
+            {
+
+                string tableName = "";
+                List<DbParameters> parameters = Helper.CreateParameterFromClassNotNull(className, ParameterDirections.In);
                 List<DbParameters> conditions = Helper.CreateConditionFromClass(className);
                 DbAttribute tableAttr = className.GetType().GetCustomAttribute<DbAttribute>();
                 if (tableAttr != null && !string.IsNullOrEmpty(tableAttr.DbTableName))
