@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 
 namespace Mer.Data.Core.Db
@@ -64,13 +65,20 @@ namespace Mer.Data.Core.Db
                     counter++;
                 }
                 oracleCommand.Parameters.AddRange(oracleParameters);
+
                 oracleConnection.Open();
-                oracleCommand.ExecuteNonQuery();
+                oracleCommand.ExecuteNonQuery();  
                 oracleConnection.Close();
                 oracleConnection.Dispose();
 
                 result = new ProcessResult { Success = true};
 
+                DbParameters outParameters = dbProcedure.Parameters.Where(x => x.ParameterDirection == ParameterDirections.Out).FirstOrDefault();
+                if (outParameters != null)
+                {
+                    OracleParameter parameter = oracleCommand.Parameters[outParameters.ParameterName];
+                    result.Data = parameter.Value;
+                }
 
             }
             catch (OracleException ex)
@@ -109,7 +117,6 @@ namespace Mer.Data.Core.Db
                         }
                         oracleCommand.Parameters.AddRange(oracleParameters);
                         oracleCommand.ExecuteNonQuery();
-                        oracleConnection.Dispose();
                     }
                     transaction.Commit(); 
                     
