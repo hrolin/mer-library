@@ -129,6 +129,7 @@ namespace Mer.Data.Core.Db
                     result = new ProcessResult { Success = false, Message = ex.Message };
                 }
                 oracleConnection.Close();
+                oracleConnection.Dispose();
 
             }
 

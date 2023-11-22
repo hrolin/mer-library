@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\MerSoftware\\mer-library\\Mer\\Mer.Data.Core\\Mer.Data.Core.csproj": {
-      "version": "0.1.2",
+      "version": "0.1.3",
       "restore": {
         "projectUniqueName": "C:\\MerSoftware\\mer-library\\Mer\\Mer.Data.Core\\Mer.Data.Core.csproj",
         "projectName": "Mer.Data.Core",
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
